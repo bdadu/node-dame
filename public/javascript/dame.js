@@ -1,32 +1,22 @@
-function tableCreate() {
-
-    var body = document.getElementsByTagName("body")[0];
-
-    var tbl = document.createElement("table");
-    var tblBody = document.createElement("tbody");
-
-    for (var j = 0; j <= 7; j++) {
-
-        var row = document.createElement("tr");
-
-        for (var i = 0; i < 7; i++) {
-
-            var cell = document.createElement("td");
-            var cellText = document.createTextNode("cell is row " + j + ", column " + i);
-
-            cell.appendChild(cellText);
-            row.appendChild(cell);
-        }
+let board = document.getElementsByClassName("dame")[0];
+let pieceCode = '\u2B24';
 
 
-        tblBody.appendChild(row);
+Array.from(board.children).forEach(function(cell) {
+  cell.onclick = function(elem) { 
+    if (elem.target.innerHTML === pieceCode) {
+        from = elem.target;
+    } else if (from && diagonalMove(from, elem.target)) {
+        elem.target.innerHTML = pieceCode;
+        from.innerHTML = '';
+        from = null;
     }
+  }
+});
 
-    tbl.appendChild(tblBody);
-
-    body.appendChild(tbl);
-
-    tbl.setAttribute("border", "2");
+function diagonalMove(from, to) {
+  let result = Math.abs(from.dataset.row - to.dataset.row) === 1;
+  result = result && to.innerHTML !== pieceCode;
+  result = result && to.className.indexOf('brown') > -1;
+  return result;
 }
-
-tableCreate();

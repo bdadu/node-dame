@@ -1,8 +1,25 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.dame {
+  width: 720px;
+  height: 720px;
+  margin: 1px;
+  border: 2px solid rgb(0, 0, 0);
 }
 
-a {
-  color: #00B7FF;
+.grey, .brown {
+  float: left;
+  width: 90px;
+  height: 90px;
+  font-size:50px;
+  text-align:center;
+  display: table-cell;
+  vertical-align:middle;
+  box-sizing: border-box;
+}
+
+.grey {
+  background-color: rgb(202, 200, 200);
+}
+
+.brown {
+  background-color: rgb(139,69,19);
 }
