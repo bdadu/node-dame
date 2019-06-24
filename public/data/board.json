@@ -1,0 +1,322 @@
+[
+    {
+        "x": 1,
+        "y": 1,
+        "ocupied": true
+    },
+    {
+        "x": 2,
+        "y": 1,
+        "ocupied": false
+    },
+    {
+        "x": 3,
+        "y": 1,
+        "ocupied": true
+    },
+    {
+        "x": 4,
+        "y": 1,
+        "ocupied": false
+    },
+    {
+        "x": 5,
+        "y": 1,
+        "ocupied": true
+    },
+    {
+        "x": 6,
+        "y": 1,
+        "ocupied": false
+    },
+    {
+        "x": 7,
+        "y": 1,
+        "ocupied": true
+    },
+    {
+        "x": 8,
+        "y": 1,
+        "ocupied": false
+    },
+    {
+        "x": 1,
+        "y": 2,
+        "ocupied": false
+    },
+    {
+        "x": 2,
+        "y": 2,
+        "ocupied": true
+    },
+    {
+        "x": 3,
+        "y": 2,
+        "ocupied": false
+    },
+    {
+        "x": 4,
+        "y": 2,
+        "ocupied": true
+    },
+    {
+        "x": 5,
+        "y": 2,
+        "ocupied": false
+    },
+    {
+        "x": 6,
+        "y": 2,
+        "ocupied": true
+    },
+    {
+        "x": 7,
+        "y": 2,
+        "ocupied": false
+    },
+    {
+        "x": 8,
+        "y": 2,
+        "ocupied": true
+    },
+    {
+        "x": 1,
+        "y": 3,
+        "ocupied": true
+    },
+    {
+        "x": 2,
+        "y": 3,
+        "ocupied": false
+    },
+    {
+        "x": 3,
+        "y": 3,
+        "ocupied": true
+    },
+    {
+        "x": 4,
+        "y": 3,
+        "ocupied": false
+    },
+    {
+        "x": 5,
+        "y": 3,
+        "ocupied": true
+    },
+    {
+        "x": 6,
+        "y": 3,
+        "ocupied": false
+    },
+    {
+        "x": 7,
+        "y": 3,
+        "ocupied": true
+    },
+    {
+        "x": 8,
+        "y": 3,
+        "ocupied": false
+    },
+    {
+        "x": 1,
+        "y": 4,
+        "ocupied": false
+    },
+    {
+        "x": 2,
+        "y": 4,
+        "ocupied": false
+    },
+    {
+        "x": 3,
+        "y": 4,
+        "ocupied": false
+    },
+    {
+        "x": 4,
+        "y": 4,
+        "ocupied": false
+    },
+    {
+        "x": 5,
+        "y": 4,
+        "ocupied": false
+    },
+    {
+        "x": 6,
+        "y": 4,
+        "ocupied": false
+    },
+    {
+        "x": 7,
+        "y": 4,
+        "ocupied": false
+    },
+    {
+        "x": 8,
+        "y": 4,
+        "ocupied": false
+    },
+    {
+        "x": 1,
+        "y": 5,
+        "ocupied": false
+    },
+    {
+        "x": 2,
+        "y": 5,
+        "ocupied": false
+    },
+    {
+        "x": 3,
+        "y": 5,
+        "ocupied": false
+    },
+    {
+        "x": 4,
+        "y": 5,
+        "ocupied": false
+    },
+    {
+        "x": 5,
+        "y": 5,
+        "ocupied": false
+    },
+    {
+        "x": 6,
+        "y": 5,
+        "ocupied": false
+    },
+    {
+        "x": 7,
+        "y": 5,
+        "ocupied": false
+    },
+    {
+        "x": 8,
+        "y": 5,
+        "ocupied": false
+    },
+    {
+        "x": 1,
+        "y": 6,
+        "ocupied": false
+    },
+    {
+        "x": 2,
+        "y": 6,
+        "ocupied": true
+    },
+    {
+        "x": 3,
+        "y": 6,
+        "ocupied": false
+    },
+    {
+        "x": 4,
+        "y": 6,
+        "ocupied": true
+    },
+    {
+        "x": 5,
+        "y": 6,
+        "ocupied": false
+    },
+    {
+        "x": 6,
+        "y": 6,
+        "ocupied": true
+    },
+    {
+        "x": 7,
+        "y": 6,
+        "ocupied": false
+    },
+    {
+        "x": 8,
+        "y": 6,
+        "ocupied": true
+    },
+    {
+        "x": 1,
+        "y": 7,
+        "ocupied": true
+    },
+    {
+        "x": 2,
+        "y": 7,
+        "ocupied": false
+    },
+    {
+        "x": 3,
+        "y": 7,
+        "ocupied": true
+    },
+    {
+        "x": 4,
+        "y": 7,
+        "ocupied": false
+    },
+    {
+        "x": 5,
+        "y": 7,
+        "ocupied": true
+    },
+    {
+        "x": 6,
+        "y": 7,
+        "ocupied": false
+    },
+    {
+        "x": 7,
+        "y": 7,
+        "ocupied": true
+    },
+    {
+        "x": 8,
+        "y": 7,
+        "ocupied": false
+    },
+    {
+        "x": 1,
+        "y": 8,
+        "ocupied": false
+    },
+    {
+        "x": 2,
+        "y": 8,
+        "ocupied": true
+    },
+    {
+        "x": 3,
+        "y": 8,
+        "ocupied": false
+    },
+    {
+        "x": 4,
+        "y": 8,
+        "ocupied": true
+    },
+    {
+        "x": 5,
+        "y": 8,
+        "ocupied": false
+    },
+    {
+        "x": 6,
+        "y": 8,
+        "ocupied": true
+    },
+    {
+        "x": 7,
+        "y": 8,
+        "ocupied": false
+    },
+    {
+        "x": 8,
+        "y": 8,
+        "ocupied": true
+    }
+]

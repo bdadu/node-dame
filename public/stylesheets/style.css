@@ -1,25 +1,25 @@
-.dame {
-  width: 720px;
-  height: 720px;
-  margin: 1px;
-  border: 2px solid rgb(0, 0, 0);
+#board {
+  margin: 0;
+  width: 256px;
+  height: 256px;
+  border: solid 1px #333;
 }
 
-.grey, .brown {
+#board .row {
+  margin: 0;
+}
+
+.square {
+  height: 32px;
+  width: 32px;
+  background: #efefef;
   float: left;
-  width: 90px;
-  height: 90px;
-  font-size:50px;
-  text-align:center;
-  display: table-cell;
-  vertical-align:middle;
-  box-sizing: border-box;
 }
 
-.grey {
-  background-color: rgb(202, 200, 200);
+.square.white {
+  background: #fff;
 }
 
-.brown {
-  background-color: rgb(139,69,19);
+.square.black {
+  background: #333;
 }
