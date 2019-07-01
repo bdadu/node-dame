@@ -7,17 +7,21 @@ fetch(API.GET)
  .then(function (resp) {
    return resp.json();
  })
- .then(function (piece) {
-
-   myPiece=piece;
-   Dame.display(piece);
+ .then(function (response) {
+   myPiece = response;
+   Dame.display(response);
  });
 
  const Dame= {
    display:function (pieces){
-     for( var i=1; i<)
-    document.querySelector(".pi-3").classList.add("piece2")
-    document.querySelector(".p2-3").classList.add("piece1")
+     pieces.forEach(p => {
+
+      if(p.piece === 1) {
+        document.querySelector(`.p${p.x}-${p.y}`).classList.add("piece1")
+      } else {
+        document.querySelector(`.p${p.x}-${p.y}`).classList.add("piece2")
+      }
+     });
    }
  }
    
