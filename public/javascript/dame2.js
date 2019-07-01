@@ -16,11 +16,10 @@ fetch(API.GET)
    display:function (pieces){
      pieces.forEach(p => {
 
-      if(p.piece === 1) {
-        document.querySelector(`.p${p.x}-${p.y}`).classList.add("piece1")
-      } else {
-        document.querySelector(`.p${p.x}-${p.y}`).classList.add("piece2")
-      }
+    
+        document.querySelector(`.p${p.x}-${p.y}`).classList.add(`piece${p.piece}`)
+
+      
      });
    }
  }
