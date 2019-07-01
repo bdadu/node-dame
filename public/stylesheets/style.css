@@ -16,17 +16,27 @@
   float: left;
 }
 
+.piece1  {
+  height: 30px;
+  width: 30px;
+  border: 1px solid red;
+  border-radius: 50%;
+  background-color: red;
+}
+.piece2  {
+  height: 30px;
+  width: 30px;
+  border: 1px solid blue;
+  border-radius: 50%;
+  background-color:blue;
+}
+
+
 .square.white {
   background: #fff;
 }
 
 .square.black {
-  background: #333;
+  background:rgb(105, 104, 104);
 }
 
-.piece  {
-  height: 30px;
-  width: 30px;
-  border: 1px solid red;
-  border-radius: 50%;
-}
