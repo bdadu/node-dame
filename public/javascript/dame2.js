@@ -50,7 +50,11 @@ paintEmptyTable();
 //document.querySelector('#board')=$("#board")..sunt acelasi lucru
 
 document.querySelector('#board').addEventListener('click', function (e) {
-  var classList = e.target.getAttribute('class');
+  var square = e.target;
+  if (e.target.className.indexOf('piece') > -1) {
+    square = e.target.parentNode;
+  }
+  var classList = square.getAttribute('class');
   var x = classList.split(' ')[1].substring(1).split('-')[0];
   var y = classList.split(' ')[1].substring(1).split('-')[1];
 
@@ -62,5 +66,5 @@ document.querySelector('#board').addEventListener('click', function (e) {
     // }
     return p.x == x && p.y == y;
   });
-  console.warn('Avem echipa , avem valoare ..sa curga banii in buzunare', selectPiece);
+  console.warn('ok', selectPiece);
 })
