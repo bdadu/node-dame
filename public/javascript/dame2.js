@@ -52,7 +52,7 @@ paintEmptyTable();
 document.querySelector('#board').addEventListener('click', function (e) {
   var square = e.target;
   if (e.target.className.indexOf('piece') > -1) {
-    square = e.target.parentNode;
+    square = e.target.parentNode; ///am verificat daca parintele lui e.target ii square
   }
   var classList = square.getAttribute('class');
   var x = classList.split(' ')[1].substring(1).split('-')[0];
