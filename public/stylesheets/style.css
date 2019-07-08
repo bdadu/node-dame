@@ -46,3 +46,9 @@
 .green{
   background-color: green;
 }
+.piece {
+  margin: 5px auto;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+ }

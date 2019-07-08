@@ -16,10 +16,13 @@ fetch(API.GET)
 const Dame = {
   display: function (pieces) {
     pieces.forEach(p => {
-      document.querySelector(`.p${p.x}-${p.y}`).classList.add(`piece${p.piece}`)/// din json am mers in adancime si am adus proprietatea pieces
+      var square = document.querySelector(`.p${p.x}-${p.y}`);
+      //square.classList.add(`piece${p.piece}`)/// din json am mers in adancime si am adus proprietatea pieces
+      square.innerHTML = `<div class="piece piece${p.piece}"></div>`
+ 
     });
   }
-}
+ }
 
 
 paintEmptyTable = () => {
@@ -44,7 +47,7 @@ paintEmptyTable = () => {
 }
 paintEmptyTable();
 
-
+//document.querySelector('#board')=$("#board")..sunt acelasi lucru
 
 document.querySelector('#board').addEventListener('click', function (e) {
   var classList = e.target.getAttribute('class');
@@ -59,5 +62,5 @@ document.querySelector('#board').addEventListener('click', function (e) {
     // }
     return p.x == x && p.y == y;
   });
-  console.warn('Esti cel mai tare', selectPiece);
+  console.warn('Avem echipa , avem valoare ..sa curga banii in buzunare', selectPiece);
 })
