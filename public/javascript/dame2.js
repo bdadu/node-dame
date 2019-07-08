@@ -8,7 +8,7 @@ fetch(API.GET)
     return resp.json();
   })
   .then(function (response) {
-    myPiece = response;
+    myPieces = response;
     Dame.display(response);
   });
 /// aranjarea pieselor pe tabla
@@ -16,11 +16,7 @@ fetch(API.GET)
 const Dame = {
   display: function (pieces) {
     pieces.forEach(p => {
-
-
       document.querySelector(`.p${p.x}-${p.y}`).classList.add(`piece${p.piece}`)/// din json am mers in adancime si am adus proprietatea pieces
-
-
     });
   }
 }
@@ -50,30 +46,18 @@ paintEmptyTable();
 
 
 
-function initEvents() {
-  Dame.addEventListener('click', function (e) {
-   /// if (e.target.className === "piece1") {
-   
-    //  from = e.target;
-  alert("ok");
-    })
-   // else if (from && diagonalMove(from, e.target)) {
-     // e.target.className = Dame;
-     // from.className = '';
-     // from = null;
-   // }
-  //});
-};
+document.querySelector('#board').addEventListener('click', function (e) {
+  var classList = e.target.getAttribute('class');
+  var x = classList.split(' ')[1].substring(1).split('-')[0];
+  var y = classList.split(' ')[1].substring(1).split('-')[1];
 
-    
-  
-
-
-//Raul's cod for piece selection and diagonale move...TO do: to be update
-
-function diagonalMove(from, to) {
-  let result = Math.abs(from.dataset.row - to.dataset.row) === 1;
-  result = result && to.innerHTML !== pieceCode;
-  result = result && to.className.indexOf('brown') > -1;
-  return result;
-}
+  var selectPiece = myPieces.find(function (p) {
+    // if (p.x == x && p.y == y) {
+    //   return true;
+    // } else {
+    //   return false
+    // }
+    return p.x == x && p.y == y;
+  });
+  console.warn('Esti cel mai tare', selectPiece);
+})
