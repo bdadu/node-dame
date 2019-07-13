@@ -1,4 +1,5 @@
 var myPieces = [];
+var movablePiece = null;
 
 var API_URL = {
   CREATE: '...',
@@ -27,10 +28,10 @@ const Dame = {
       var square = document.querySelector(`.p${p.x}-${p.y}`);
       //square.classList.add(`piece${p.piece}`)/// din json am mers in adancime si am adus proprietatea pieces
       square.innerHTML = `<div class="piece piece${p.piece}"></div>`
- 
+
     });
   }
- }
+}
 
 
 paintEmptyTable = () => {
@@ -66,21 +67,34 @@ document.querySelector('#board').addEventListener('click', function (e) {
   var x = classList.split(' ')[1].substring(1).split('-')[0];
   var y = classList.split(' ')[1].substring(1).split('-')[1];
 
-  console.info('pozitie', x,y);
+  console.info('pozitie', x, y);
 
   var selectPiece = myPieces.find(function (p) {
-    console.info('hh',p)
-
-    if (p.x == x && p.y == y) {
-    return true;
-    } else {
-    return false;
-     }
-    
+    return p.x == x && p.y == y;
   });
-  console.warn('Piesa-Player', selectPiece);
+  
+  //cell has piece
+  if (selectPiece != undefined) {
+    movablePiece = selectPiece;
+  } else if (movablePiece) { //cell is empty
+    console.info('target', square, movablePiece);
+    //move piece to square
+    square.innerHTML = `<div class="piece piece${movablePiece.piece}"></div>`;
+
+    //remove piece from old position
+    document.querySelector(`.p${movablePiece.x}-${movablePiece.y}`).innerHTML = '';
+
+    //reset global after move
+    movablePiece = null;
+
+    //push new ocupied position to json
+    myPieces.push({x: x, y: y,})
+  }
+
+
+  console.warn('Piesa-Player', movablePiece);
 })
 
+//Json.parse -converteste un string in obiect array
 
-  
-  
+
