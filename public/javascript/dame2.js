@@ -2,8 +2,12 @@ var myPieces = [];
 var API = {
   GET: './data/board-short.json'
 };
+var API_URL = {
+  CREATE: '...',
+  READ: 'users', //API.GET
+};
 
-fetch(API.GET)
+fetch(API_URL.READ)
   .then(function (resp) {
     return resp.json();
   })
