@@ -63,12 +63,17 @@ document.querySelector('#board').addEventListener('click', function (e) {
   var y = classList.split(' ')[1].substring(1).split('-')[1];
 
   var selectPiece = myPieces.find(function (p) {
-    // if (p.x == x && p.y == y) {
-    //   return true;
-    // } else {
-    //   return false
-    // }
-    return p.x == x && p.y == y;
+    if (p.x == x && p.y == y) {
+    return true;
+    } else {
+    return false;
+     }
+    
   });
   console.warn('ok', selectPiece);
 })
+
+
+
+  
+  
