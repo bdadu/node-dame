@@ -1,10 +1,14 @@
 var myPieces = [];
-var API = {
-  GET: './data/board-short.json'
-};
+
 var API_URL = {
   CREATE: '...',
-  READ: 'users', //API.GET
+  //READ: 'users', //API.GET
+  READ: './data/board-short.json'
+};
+var API_METHOD = {
+  CREATE: 'POST',
+  READ: 'GET',
+
 };
 
 fetch(API_URL.READ)
@@ -62,7 +66,11 @@ document.querySelector('#board').addEventListener('click', function (e) {
   var x = classList.split(' ')[1].substring(1).split('-')[0];
   var y = classList.split(' ')[1].substring(1).split('-')[1];
 
+  console.info('pozitie', x,y);
+
   var selectPiece = myPieces.find(function (p) {
+    console.info('hh',p)
+
     if (p.x == x && p.y == y) {
     return true;
     } else {
@@ -70,9 +78,8 @@ document.querySelector('#board').addEventListener('click', function (e) {
      }
     
   });
-  console.warn('ok', selectPiece);
+  console.warn('Piesa-Player', selectPiece);
 })
-
 
 
   

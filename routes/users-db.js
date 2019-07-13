@@ -13,7 +13,7 @@ var pool  = mysql.createPool({
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   pool.getConnection((err, connection) => {
-    const sql = `SELECT * FROM  piece`;
+    const sql = `SELECT * FROM  pozitii piese`;
     connection.query(sql, (err, results) => {
       res.json(results);
     });
