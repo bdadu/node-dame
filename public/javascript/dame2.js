@@ -18,12 +18,13 @@ fetch(API_URL.READ)
 /// aranjarea pieselor pe tabla
 
 const Dame = {
-  display: function (pieces) {
+  display: function (response) {
+    var pieces = JSON.parse(response[0].piese);
     pieces.forEach(p => {
       var square = document.querySelector(`.p${p.x}-${p.y}`);
       //square.classList.add(`piece${p.piece}`)/// din json am mers in adancime si am adus proprietatea pieces
       square.innerHTML = `<div class="piece piece${p.piece}"></div>`
- 
+    
     });
   }
  }
