@@ -6,6 +6,9 @@ var API_URL = {
   READ: 'users', //API.GET
   // READ: './data/board-short.json'
 };
+if (true || location.host === "mraulb.github.io") {
+  API_URL.READ = 'data/board-short.json';
+}
 var API_METHOD = {
   CREATE: 'POST',
   READ: 'GET',
@@ -123,7 +126,7 @@ function tryToMove(piece, x, y) {
       }
     }
   } else {
-    //TODO
+    //TODO pt a folosi logica jocului cand piesa evine dama
   }
 }
 
