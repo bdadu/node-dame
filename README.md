@@ -4,7 +4,7 @@ _Still work in progress_
 
 ## Live preview
 
-Open [Play Checkers!]( https://mraulb.github.io/node-dame/public/index.html)it/ )
+Open [Play Checkers!](https://mraulb.github.io/node-dame/public/index.html)
 
 
 ## Structure
@@ -25,4 +25,4 @@ daily usage
 ```
 serve .
 ```
-Open: [http:
+Open: [http://localhost:3000/](http://localhost:3000/)
