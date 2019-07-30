@@ -6,8 +6,10 @@ var API_URL = {
   READ: 'users', //API.GET
   // READ: './data/board-short.json'
 };
-if (true || location.host === "mraulb.github.io") {
-  API_URL.READ = '../public/data/board-short.json';
+
+if (location.host==="mraulb.github.io"){
+  API_URL.READ='..public/data/board-short.json';
+  API_METHOD.READ='GET'
 }
 var API_METHOD = {
   CREATE: 'POST',
@@ -93,6 +95,7 @@ function findPiece(x, y) {
   });
 }
 
+
 function tryToMove(piece, x, y) {
   console.info('move?', piece, 'to', x, y);
 
@@ -102,7 +105,8 @@ function tryToMove(piece, x, y) {
   }
 
   if (piece.piece == 1) {
-    if (piece.x + 1 == x) {
+    if (piece.x + 1 == x && (piece.y -1==y || piece.y + 1==y) ) {
+    
       // TODO y
       movePiece(piece, x, y);
     } else if(piece.x + 2 == x) {
@@ -116,7 +120,7 @@ function tryToMove(piece, x, y) {
       //var opozitePiece = findPiece(x - 1, y + 1);
     }
   } else if(piece.piece == 2){
-    if (piece.x - 1 == x) {
+    if (piece.x - 1 == x && (piece.y -1==y || piece.y + 1==y)) {
       movePiece(piece, x, y);
     } else if (piece.x - 2 == x){
       var opozitePiece = findPiece(x + 1, y - (y - piece.y)/2);
