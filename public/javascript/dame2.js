@@ -65,7 +65,7 @@ const paintEmptyTable = () => {
   }
 
 }
-//paintEmptyTable();
+
 
 //document.querySelector('#board')=$("#board")..sunt acelasi lucru
 
@@ -131,6 +131,22 @@ function tryToMove(piece, x, y) {
     }
   } else {
     //TODO pt a folosi logica jocului cand piesa evine dama
+  if(piece.piece==1){
+    if(piece.x==8){
+      if ((piece.x + 1 == x || piece.x -1 ==x) && (piece.y -1==y || piece.y + 1==y) ) {
+    
+    
+        movePiece(piece, x, y);
+      } else if(piece.x + 2 == x || piece.x-2==x) {
+        //if diaglonala la dreapta
+        var opozitePiece = findPiece(x - 1, y - (y - piece.y)/2);
+        if (opozitePiece && opozitePiece.piece != piece.piece) {
+          removePiece(opozitePiece);
+          movePiece(piece, x, y);
+        }
+      }
+    }
+  }
   }
 }
 
