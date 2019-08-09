@@ -7,7 +7,7 @@ var API_URL = {
 };
 
 var API_METHOD={
-  READ:'GET'
+  READ:'GET',
   CREATE:'POST'
 }
 
