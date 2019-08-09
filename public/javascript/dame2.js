@@ -3,7 +3,7 @@ var selectedPiece;
 
 var API_URL = {
   CREATE: 'POST',
-  READ: 'data/board-short.json'
+  READ: 'GET',
 };
 
 var API_METHOD={
@@ -15,8 +15,6 @@ if (location.host === "mraulb.github.io") {
   API_URL.READ = 'data/board-short.json';
   API_METHOD.READ='GET';
   API_METHOD.CREATE='POST';
-    
-
   };
 
   /// aranjarea pieselor pe tabla
