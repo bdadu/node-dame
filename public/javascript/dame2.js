@@ -12,8 +12,8 @@ var API_METHOD={
 };
 
 if (location.host === "mraulb.github.io") {
-  API_URL.READ = '..public/data/board-short.json';
-  API_METHOD.READ='GET'
+  API_URL.READ = '..data/board-short.json';
+  API_METHOD.READ='GET';
   API_METHOD.CREATE='POST';
     
 
