@@ -3,9 +3,13 @@ var selectedPiece;
 
 var API_URL = {
   CREATE: 'POST',
-  READ: 'GET', //API.GET
-  // READ: './data/board-short.json'
+  READ: '../data/board-short.json'
 };
+
+var API_METHOD={
+  READ:'GET'
+  CREATE:'POST'
+}
 
 if (location.host === "mraulb.github.io") {
   API_URL.READ = '..public/data/board-short.json';
