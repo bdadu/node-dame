@@ -2,8 +2,8 @@ var myPieces = [];
 var selectedPiece;
 
 var API_URL = {
-  CREATE: '...',
-  READ: 'users', //API.GET
+  CREATE: 'POST',
+  READ: 'GET', //API.GET
   // READ: './data/board-short.json'
 };
 
@@ -138,7 +138,7 @@ function tryToMove(piece, x, y) {
     
         movePiece(piece, x, y);
       } else if(piece.x + 2 == x || piece.x-2==x) {
-        //if diaglonala la dreapta
+  
         var opozitePiece = findPiece(x - 1, y - (y - piece.y)/2);
         if (opozitePiece && opozitePiece.piece != piece.piece) {
           removePiece(opozitePiece);
