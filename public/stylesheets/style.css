@@ -43,8 +43,11 @@
   background-color: #b58863;
  color: #f0d9b5;
 }
-.green{
-  background-color: green;
+.brown{
+  background-color: rgb(128, 19, 0);
+}
+.purple{
+  background-color: rgb(132, 0, 255);
 }
 .piece {
   margin: 5px auto;
