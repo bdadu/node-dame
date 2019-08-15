@@ -1,5 +1,7 @@
 var myPieces = [];
 var selectedPiece;
+var king1;
+var king2;
 var API_URL = {
   CREATE: '/users',
   READ: '/users',
@@ -30,7 +32,7 @@ const Dame = {
         myPieces = pieces;
         Dame.display(pieces);
       })
-      .catch( e => {
+      .catch(e => {
         console.log(e);
       });
   },
@@ -62,7 +64,7 @@ const paintEmptyTable = () => {
         $(div).addClass("black");
       }
       divRow.append(div);
-     
+
     }
     $("#board").append(divRow);
   }
@@ -83,7 +85,7 @@ function clickedOnSquare(x, y) {
 
   if (piece) {
     selectedPiece = piece;
-    // TODO highlight
+
     return;
   }
   if (selectedPiece) {
@@ -100,27 +102,30 @@ function findPiece(x, y) {
 
 
 function tryToMove(piece, x, y) {
-  console.info('move?', piece, 'to', x, y);
-
-  if (piece.y == y) {
-    console.warn('invalid move');
-    return;
-  }
+  console.info('moved', piece, 'to', x, y);
 
   if (piece.piece == 1) {
     if (piece.x + 1 == x && (piece.y - 1 == y || piece.y + 1 == y)) {
 
-      // TODO y
+
       movePiece(piece, x, y);
-    } else if (piece.x + 2 == x) {
-      //if diaglonala la dreapta
+
+    } else if (piece.x + 1 == 8) {
+      //coditie ca piesa sa devina king
+      piece.piece = king1;
+      console.log('king', king1, x, y);
+      movePiece(piece, x, y);
+    }
+    else if (piece.x + 2 == x) {
+
       var opozitePiece = findPiece(x - 1, y - (y - piece.y) / 2);
       if (opozitePiece && opozitePiece.piece != piece.piece) {
         removePiece(opozitePiece);
         movePiece(piece, x, y);
+
       }
-      // else diagolana la stanga
-      //var opozitePiece = findPiece(x - 1, y + 1);
+
+
     }
   } else if (piece.piece == 2) {
     if (piece.x - 1 == x && (piece.y - 1 == y || piece.y + 1 == y)) {
@@ -132,24 +137,17 @@ function tryToMove(piece, x, y) {
         movePiece(piece, x, y);
       }
     }
-  } else {
     //TODO pt a folosi logica jocului cand piesa evine dama
-    if (piece.piece == 1) {
-      if (piece.x == 8) {
-        if ((piece.x + 1 == x || piece.x - 1 == x) && (piece.y - 1 == y || piece.y + 1 == y)) {
+  } else {
 
 
-          movePiece(piece, x, y);
-        } else if (piece.x + 2 == x || piece.x - 2 == x) {
 
-          var opozitePiece = findPiece(x - 1, y - (y - piece.y) / 2);
-          if (opozitePiece && opozitePiece.piece != piece.piece) {
-            removePiece(opozitePiece);
-            movePiece(piece, x, y);
-          }
-        }
-      }
-    }
+
+
+
+
+
+
   }
 }
 
@@ -163,7 +161,7 @@ function movePiece(piece, x, y) {
   piece.y = y;
   Dame.display(myPieces);
   selectedPiece = undefined;
-  //Dame.saveState(myPieces);
+
 }
 
 document.querySelector('#board').addEventListener('click', function (e) {
@@ -179,28 +177,8 @@ document.querySelector('#board').addEventListener('click', function (e) {
   return;
 
 
-  //cell has piece
-  if (selectPiece != undefined) {
-    movablePiece = selectPiece;
 
 
-    //} else if (movablePiece) { //cell is empty
-    console.info('target', square, movablePiece);
-    //move piece to square
-    // square.innerHTML = `<div data-color="${movablePiece.piece}" class="piece piece${movablePiece.piece}"></div>`;
-
-    //remove piece from old position
-    // document.querySelector(`.p${movablePiece.x}-${movablePiece.y}`).innerHTML = '';
-
-    //reset global after move
-    //movablePiece = null;
-
-    //if (square.firstChild) {
-    // var piece = square.firstChild.getAttribute('data-color');
-  }
-  //push new ocupied position to json
-  //myPieces.push({x: x, y: y, piece: piece})
-  // }
 })
 
 //Json.parse -converteste un string in obiect array
