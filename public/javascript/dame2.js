@@ -110,11 +110,7 @@ function tryToMove(piece, x, y) {
 
       movePiece(piece, x, y);
 
-    } else if (piece.x + 1 == 8) {
-      //coditie ca piesa sa devina king
-      piece.piece = king1;
-      console.log('king', king1, x, y);
-      movePiece(piece, x, y);
+    
     }
     else if (piece.x + 2 == x) {
 
@@ -138,7 +134,27 @@ function tryToMove(piece, x, y) {
       }
     }
     //TODO pt a folosi logica jocului cand piesa evine dama
-  } else {
+  } else if( piece.piece==3) {
+    
+    if ((piece.x + 1 == x || piece.x-1 == x) && (piece.y - 1 == y || piece.y + 1 == y)) {
+
+
+      movePiece(piece, x, y);
+
+    
+    }
+    else if (piece.x + 2 == x || piece.x -2 == x) {
+
+      var opozitePiece = findPiece(x - 1, y - (y - piece.y) / 2);
+      if (opozitePiece && opozitePiece.piece != piece.piece) {
+        removePiece(opozitePiece);
+        movePiece(piece, x, y);
+
+      }
+
+
+    }
+    
 
 
 
