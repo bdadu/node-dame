@@ -131,10 +131,7 @@ function tryToMove(piece, x, y) {
 
     }
     // piesa obisnuita devine king (UK ) sau Dama (RS)
-    if (piece.piece == 1 && piece.x == 8) {
-      piece.piece = 3;
-
-    }
+   
     // regula pt mutare pe diagonala player 2 (blue) cand  NU captureaza piesa adversarului
   } else if (piece.piece == 2) {
     if (piece.x - 1 == x && (piece.y - 1 == y || piece.y + 1 == y)) {
@@ -149,7 +146,12 @@ function tryToMove(piece, x, y) {
       }
     }
     // logica jocului cand piesa evine king  (UK version not US)
-  } else if (piece.piece == 3) {
+  } if (piece.piece == 1 && piece.x == 8) {
+    piece.piece = 3;
+
+  } 
+  
+  else if (piece.piece == 3) {
 
     if ((piece.x + 1 == x || piece.x - 1 == x) && (piece.y - 1 == y || piece.y + 1 == y)) {
 
