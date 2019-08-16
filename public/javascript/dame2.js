@@ -156,14 +156,15 @@ function tryToMove(piece, x, y) {
     }
     // logica jocului cand piesa devine king  (UK version not US)
   } else if (piece.piece == 3) {
+    // regula pt mutare pe diagonala player 1 (Red) piesa King cand Nu  captureaza piesa adversarului
 
     if ((piece.x + 1 == x || piece.x - 1 == x) && (piece.y - 1 == y || piece.y + 1 == y)) {
 
 
       movePiece(piece, x, y);
-
-
     }
+
+    // regula pt mutare pe diagonala player 1 (red) piesa King cand   captureaza piesa adversarului
     else if (piece.x + 2 == x || piece.x - 2 == x) {
 
       var opozitePiece = findPiece(x - 1, y - (y - piece.y) / 2);
@@ -175,10 +176,12 @@ function tryToMove(piece, x, y) {
     }
 
   } else if (piece.piece == 4) {
+
+    // regula pt mutare pe diagonala player 2 (blue) piesa King cand Nu  captureaza piesa adversarului
     if ((piece.x - 1 == x || piece.x + 1 == x) && (piece.y - 1 == y || piece.y + 1 == y)) {
       movePiece(piece, x, y);
 
-      // regula pt mutare pe diagonala player 2 (blue) cand  NU captureaza piesa adversarului
+      // regula pt mutare pe diagonala player 2 (blue) piesa King cand   captureaza piesa adversarului
     } else if (piece.x - 2 == x || piece.x + 2 == x) {
       var opozitePiece = findPiece(x + 1, y - (y - piece.y) / 2);
       if (opozitePiece && opozitePiece.piece != piece.piece) {
