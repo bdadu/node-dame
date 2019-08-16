@@ -131,7 +131,7 @@ function tryToMove(piece, x, y) {
 
     }
     // piesa obisnuita devine king (UK ) sau Dama (RS)
-    if (piece.x == 8) {
+    if (piece.piece == 1 && piece.x == 8) {
       piece.piece = 3;
 
     }
