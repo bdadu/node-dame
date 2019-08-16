@@ -32,7 +32,7 @@
   background-color:blue;
 }
 
-.king1{
+.piece3{
   height: 30px;
   width: 30px;
   border: 1px solid rgba(255, 0, 0, 0.555);
@@ -40,7 +40,7 @@
   background-color: rgba(255, 0, 0, 0.555);
 
 }
-.king2{
+.piece4{
   height: 30px;
   width: 30px;
   border: 1px solid rgba(0, 0, 255, 0.479);
