@@ -112,18 +112,14 @@ function findPiece(x, y) {
   });
 }
 
-
+//regula pt a muta piese rosii
 function tryToMoveRed(piece, x, y) {
   console.info('moved', piece, 'to', x, y);
 
   // regula pt mutare pe diagonala player 1 (red) cand  NU captureaza piesa adversarului
   if (piece.piece == 1) {
     if (piece.x + 1 == x && (piece.y - 1 == y || piece.y + 1 == y)) {
-
-
       movePiece1(piece, x, y);
-
-
     }
     //regula pt mutare cand player 1 (red) captureaza piesa adversarului
     else if (piece.x + 2 == x) {
@@ -134,15 +130,13 @@ function tryToMoveRed(piece, x, y) {
         movePiece1(piece, x, y);
 
       }
-
-
     }
     // piesa obisnuita devine king (UK ) sau Dama (RS)
     if (piece.piece == 1 && piece.x == 8) {
       piece.piece = 3;
 
     }
-    // regula pt mutare pe diagonala player 2 (blue) cand  NU captureaza piesa adversarului
+
   } else if (piece.piece == 3) {
     // regula pt mutare pe diagonala player 1 (Red) piesa King cand Nu  captureaza piesa adversarului
 
@@ -152,7 +146,7 @@ function tryToMoveRed(piece, x, y) {
       movePiece1(piece, x, y);
     }
 
-    // regula pt mutare pe diagonala player 1 (red) piesa King cand   captureaza piesa adversarului
+    // regula pt mutare pe diagonala player 1 (red) piesa King cand captureaza piesa adversarului
     else if (piece.x + 2 == x) {
 
       var opozitePiece = findPiece(x - 1, y - (y - piece.y) / 2);
@@ -168,15 +162,12 @@ function tryToMoveRed(piece, x, y) {
         movePiece1(piece, x, y);
       }
     }
-
-
   }
 }
 
-
-
-
+// regula pentru mutare piese albastre
 function tryToMoveBlue(piece, x, y) {
+  // regula pt mutare pe diagonala player 2 (blue) cand  NU captureaza piesa adversarului
   if (piece.piece == 2) {
     if (piece.x - 1 == x && (piece.y - 1 == y || piece.y + 1 == y)) {
       movePiece2(piece, x, y);
@@ -196,7 +187,6 @@ function tryToMoveBlue(piece, x, y) {
 
     }
     // logica jocului cand piesa devine king red  (UK version not US)
-
 
   } else if (piece.piece == 4) {
 
@@ -229,7 +219,7 @@ function removePiece(piece) {
   myPieces = myPieces.filter(p => p !== piece);
 }
 
-
+// functia miscare piesa rosie
 function movePiece1(piece, x, y) {
   piece.x = x;
   piece.y = y;
@@ -237,6 +227,7 @@ function movePiece1(piece, x, y) {
   selectedPiece = undefined;
 }
 
+//functie miscare piesa albastra
 function movePiece2(piece, x, y) {
   piece.x = x;
   piece.y = y;
@@ -258,9 +249,6 @@ document.querySelector('#board').addEventListener('click', function (e) {
 
   clickedOnSquare(x, y);
   return;
-
-
-
 
 })
 
