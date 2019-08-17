@@ -156,14 +156,14 @@ function tryToMoveRed(piece, x, y) {
     else if (piece.x + 2 == x) {
 
       var opozitePiece = findPiece(x - 1, y - (y - piece.y) / 2);
-      if (opozitePiece && (opozitePiece.piece != 1 || opozitePiece.piece != piece.piece)) {
+      if (opozitePiece && (opozitePiece.piece != 1 && opozitePiece.piece != piece.piece)) {
         removePiece(opozitePiece);
         movePiece1(piece, x, y);
 
       }
     } else if (piece.x - 2 == x) {
       var opozitePiece = findPiece(x + 1, y - (y - piece.y) / 2);
-      if (opozitePiece && (opozitePiece.piece != 1 || opozitePiece.piece != piece.piece)) {
+      if (opozitePiece && (opozitePiece.piece != 1 && opozitePiece.piece != piece.piece)) {
         removePiece(opozitePiece);
         movePiece1(piece, x, y);
       }
@@ -207,13 +207,13 @@ function tryToMoveBlue(piece, x, y) {
       // regula pt mutare pe diagonala player 2 (blue) piesa King cand   captureaza piesa adversarului
     } else if (piece.x - 2 == x) {
       var opozitePiece = findPiece(x + 1, y - (y - piece.y) / 2);
-      if (opozitePiece && (opozitePiece.piece != 2 || opozitePiece.piece != piece.piece)) {
+      if (opozitePiece && (opozitePiece.piece != 2 && opozitePiece.piece != piece.piece)) {
         removePiece(opozitePiece);
         movePiece2(piece, x, y);
       }
     } else if (piece.x + 2 == x) {
       var opozitePiece = findPiece(x - 1, y - (y - piece.y) / 2);
-      if (opozitePiece && (opozitePiece.piece != 2 || opozitePiece.piece != piece.piece)) {
+      if (opozitePiece && (opozitePiece.piece != 2 && opozitePiece.piece != piece.piece)) {
         removePiece(opozitePiece);
         movePiece2(piece, x, y);
       }
