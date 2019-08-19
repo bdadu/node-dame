@@ -44,9 +44,6 @@ const Dame = {
       square.innerHTML = `<div data-color="${p.piece}" class="piece piece${p.piece}"></div>`
 
     });
-
-
-
   }
 }
 
@@ -76,11 +73,6 @@ const paintEmptyTable = () => {
 
 }
 
-
-//document.querySelector('#board')=$("#board")..sunt acelasi lucru
-
-
-
 function clickedOnSquare(x, y) {
 
   // logica pt a verifica patratul ales sa facem mutarea se incadreaza in mutari permise (suma x+y a mutarilor nepermise este nr par)
@@ -107,9 +99,7 @@ function clickedOnSquare(x, y) {
   }
 }
 
-
 // logica pt a gasi o piesa si afisarea coordonatelor ei
-
 function findPiece(x, y) {
   return myPieces.find(function (p) {
     return p.x == x && p.y == y;
@@ -132,21 +122,17 @@ function tryToMoveRed(piece, x, y) {
       if (opozitePiece && opozitePiece.piece != piece.piece) {
         removePiece(opozitePiece);
         movePiece1(piece, x, y);
-
-
       }
     }
     // piesa obisnuita devine king (UK ) sau Dama (RS)
     if (piece.piece == 1 && piece.x == 8) {
       piece.piece = 3;
-
     }
 
   } else if (piece.piece == 3) {
     // regula pt mutare pe diagonala player 1 (Red) piesa King cand Nu  captureaza piesa adversarului
 
     if ((piece.x + 1 == x || piece.x - 1 == x) && (piece.y - 1 == y || piece.y + 1 == y)) {
-
 
       movePiece1(piece, x, y);
     }
@@ -179,7 +165,6 @@ function tryToMoveBlue(piece, x, y) {
     if (piece.x - 1 == x && (piece.y - 1 == y || piece.y + 1 == y)) {
 
       movePiece2(piece, x, y);
-
 
       // regula pt mutare pe diagonala player 2 (blue) cand  captureaza piesa adversarului
     } else if (piece.x - 2 == x) {
@@ -215,7 +200,6 @@ function tryToMoveBlue(piece, x, y) {
       if (opozitePiece && (opozitePiece.piece != 2 && opozitePiece.piece != piece.piece)) {
         removePiece(opozitePiece);
         movePiece2(piece, x, y);
-
       }
     } winer();
 
@@ -255,17 +239,14 @@ function movePiece2(piece, x, y) {
   piece.y = y;
   Dame.display(myPieces);
   selectedPiece = undefined;
-
 }
 
 // logica pt a face click
-
 document.querySelector('#board').addEventListener('click', function (e) {
   var square = e.target;
   if (e.target.className.indexOf('piece') > -1) {
     square = e.target.parentNode; ///am verificat daca parintele lui e.target ii square
   }
-
   const x = square.getAttribute('data-x') * 1;
   const y = square.getAttribute('data-y') * 1;
 
