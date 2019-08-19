@@ -1,6 +1,6 @@
 var myPieces = [];
 var selectedPiece;
-var playerTurn;
+var red;
 var API_URL = {
   CREATE: '/users',
   READ: '/users',
@@ -30,6 +30,7 @@ const Dame = {
         var pieces = typeof rawPieces === 'object' ? rawPieces : JSON.parse(rawPieces);
         myPieces = pieces;
         Dame.display(pieces);
+
       })
       .catch(e => {
         console.log(e);
@@ -43,6 +44,9 @@ const Dame = {
       square.innerHTML = `<div data-color="${p.piece}" class="piece piece${p.piece}"></div>`
 
     });
+
+
+
   }
 }
 
@@ -129,6 +133,7 @@ function tryToMoveRed(piece, x, y) {
         removePiece(opozitePiece);
         movePiece1(piece, x, y);
 
+
       }
     }
     // piesa obisnuita devine king (UK ) sau Dama (RS)
@@ -162,15 +167,19 @@ function tryToMoveRed(piece, x, y) {
         movePiece1(piece, x, y);
       }
     }
-  }
+ 
+  } 
+  winer();
 }
-
+  
 // regula pentru mutare piese albastre
 function tryToMoveBlue(piece, x, y) {
   // regula pt mutare pe diagonala player 2 (blue) cand  NU captureaza piesa adversarului
   if (piece.piece == 2) {
     if (piece.x - 1 == x && (piece.y - 1 == y || piece.y + 1 == y)) {
+
       movePiece2(piece, x, y);
+
 
       // regula pt mutare pe diagonala player 2 (blue) cand  captureaza piesa adversarului
     } else if (piece.x - 2 == x) {
@@ -206,14 +215,26 @@ function tryToMoveBlue(piece, x, y) {
       if (opozitePiece && (opozitePiece.piece != 2 && opozitePiece.piece != piece.piece)) {
         removePiece(opozitePiece);
         movePiece2(piece, x, y);
+
       }
-    }
+    } winer();
 
   }
 }
 
-// functia pt a captura piesa adversarului
+// logica pt a verifica cine castiga
 
+function winer() {
+  var red = myPieces.filter(piece => piece.piece == 1 || piece.piece == 3);
+  var blue = myPieces.filter(piece => piece.piece == 2 || piece.piece == 4);
+  if (blue.length == 0) {
+    window.alert("Red win")
+  } else if (red.length == 0) {
+    window.alert("Blue win")
+  }
+}
+
+// functia pt a captura piesa adversarului
 function removePiece(piece) {
   console.info('Capturam piesa', piece);
   myPieces = myPieces.filter(p => p !== piece);
@@ -225,6 +246,7 @@ function movePiece1(piece, x, y) {
   piece.y = y;
   Dame.display(myPieces);
   selectedPiece = undefined;
+
 }
 
 //functie miscare piesa albastra
@@ -251,6 +273,4 @@ document.querySelector('#board').addEventListener('click', function (e) {
   return;
 
 })
-
-
 
