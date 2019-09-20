@@ -35,17 +35,17 @@
 .piece3{
   height: 30px;
   width: 30px;
-  border: 1px solid rgba(255, 0, 0, 0.555);
+  border: 1px solid rgba(226, 11, 75, 0.979);
   border-radius: 50%;
-  background-color: rgba(255, 0, 0, 0.555);
+  background-color: rgba(226, 11, 75, 0.979);
 
 }
 .piece4{
   height: 30px;
   width: 30px;
-  border: 1px solid rgba(0, 0, 255, 0.479);
+  border: 1px solid rgb(189, 12, 212);
   border-radius: 50%;
-  background-color:rgba(0, 0, 255, 0.479);
+  background-color:rgba(189, 12, 212);
 
 }
 

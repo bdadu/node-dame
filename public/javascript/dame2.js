@@ -176,11 +176,11 @@ function tryToMoveBlue(piece, x, y) {
 
     }
     // regula cand piesa player 2 (blue) devine king
-    if (piece.piece == 2 && (piece.x - 1 == 1 || piece.x - 2 == 1)) {
+    if (piece.piece == 2 && piece.x - 1 == 1 || piece.x -2  == 1) {
       piece.piece = 4;
 
     }
-    // logica jocului cand piesa devine king red  (UK version not US)
+    // logica jocului cand piesa devine king (blue) (UK version not US)
 
   } else if (piece.piece == 4) {
 
