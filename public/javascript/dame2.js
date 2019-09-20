@@ -125,7 +125,7 @@ function tryToMoveRed(piece, x, y) {
       }
     }
     // piesa obisnuita devine king (UK ) sau Dama (RS)
-    if (piece.piece == 1 && piece.x == 8) {
+    if (piece.piece == 1 && (piece.x + 1== 8 || piece.x + 2 == 8)) {
       piece.piece = 3;
     }
 
@@ -176,7 +176,7 @@ function tryToMoveBlue(piece, x, y) {
 
     }
     // regula cand piesa player 2 (blue) devine king
-    if (piece.piece == 2 && piece.x == 1) {
+    if (piece.piece == 2 && (piece.x - 1 == 1 || piece.x - 2 == 1)) {
       piece.piece = 4;
 
     }
@@ -211,9 +211,9 @@ function tryToMoveBlue(piece, x, y) {
 function winer() {
   var red = myPieces.filter(piece => piece.piece == 1 || piece.piece == 3);
   var blue = myPieces.filter(piece => piece.piece == 2 || piece.piece == 4);
-  if (blue.length == 0) {
+  if (blue.length == 10) {
     window.alert("Red win")
-  } else if (red.length == 0) {
+  } else if (red.length == 10) {
     window.alert("Blue win")
   }
 }
